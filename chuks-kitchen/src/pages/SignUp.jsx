@@ -224,7 +224,7 @@ const SignUp = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#5D3A26] text-white py-12 lg:py-16 px-6 sm:px-10 lg:px-20 relative">
+      <footer className="hidden sm:block bg-[#5D3A26] text-white py-12 lg:py-16 px-6 sm:px-10 lg:px-20 relative">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-['Dancing_Script'] font-bold text-[#FF9E53]">Chuks Kitchen</h2>
