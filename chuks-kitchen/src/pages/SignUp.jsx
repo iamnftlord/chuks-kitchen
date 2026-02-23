@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import heroImage from '../assets/Rectangle 1.jpg';
+import heroImage from '../assets/Welcome.jpg';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const SignUp = () => {
       return;
     }
     console.log('Signing up with:', formData);
-    navigate('/login');
+    navigate('/explore');
   };
 
   return (
@@ -215,7 +215,7 @@ const SignUp = () => {
 
               <div className="text-center mt-6">
                 <p className="text-xs sm:text-sm text-gray-500 font-medium">
-                  Already have an account? <Link to="/login" className="text-[#0091FF] font-bold hover:underline">Sign In</Link>
+                  Already have an account? <Link to="/login" className="text-[#0091FF] font-bold hover:underline">Login</Link>
                 </p>
               </div>
             </form>

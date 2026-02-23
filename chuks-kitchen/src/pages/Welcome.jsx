@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import heroImage from '../assets/Rectangle 1.jpg';
+import heroImage from '../assets/Welcome.jpg';
 import iconFreshlyPrepared from '../assets/Frame 2.svg';
 import iconLocalBusiness from '../assets/fork-knife-fill.svg';
 import iconDelivery from '../assets/Truck.svg';
@@ -23,7 +23,7 @@ const Welcome = () => {
             Chuks Kitchen
           </h1>
           <Link to="/login" className="px-5 sm:px-8 py-2 border border-[#0091FF] text-[#0091FF] rounded-lg font-semibold hover:bg-blue-50 transition-colors text-xs sm:text-sm">
-            Sign In
+            Login
           </Link>
         </div>
 

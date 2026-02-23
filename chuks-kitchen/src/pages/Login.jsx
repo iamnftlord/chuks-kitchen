@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import heroImage from '../assets/Rectangle 1.jpg';
+import heroImage from '../assets/Welcome.jpg';
+import Footer from '../components/Footer';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,16 +28,15 @@ const Login = () => {
     
     if (rememberMe) {
       localStorage.setItem('chuks_email', email);
-      localStorage.setItem('chuks_password', password); // Note: Simple implementation for demo
       localStorage.setItem('chuks_remember', 'true');
     } else {
       localStorage.removeItem('chuks_email');
-      localStorage.removeItem('chuks_password');
       localStorage.setItem('chuks_remember', 'false');
     }
 
-    console.log('Logging in with:', { email, password });
-    // Add your navigation or API call here
+    localStorage.setItem('isLoggedIn', 'true');
+
+    navigate('/explore');
   };
 
   return (
@@ -168,59 +168,7 @@ const Login = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="hidden sm:block bg-[#5D3A26] text-white py-12 lg:py-16 px-6 sm:px-10 lg:px-20 relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
-          <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-['Dancing_Script'] font-bold text-[#FF9E53]">Chuks Kitchen</h2>
-            <p className="text-sm lg:text-base text-gray-200 leading-relaxed font-medium">
-              Bringing the authentic flavors of Nigerian home cooking to your table, with passion and care.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-['Outfit'] font-bold text-white">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Explore</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">My Order</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Account</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-['Outfit'] font-bold text-white">Contact Us</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>+234 801 234 5678</li>
-              <li>hello@chukskitchen.com</li>
-              <li className="leading-snug">123 Taste Blvd, Lagos, Nigeria</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Facebook</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] sm:text-xs text-gray-400">© 2024 Chuks Kitchen. All rights reserved.</p>
-          
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-10 h-10 bg-[#0091FF] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-blue-600 transition-all active:scale-90"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 15l-6-6-6 6"/>
-            </svg>
-          </button>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
