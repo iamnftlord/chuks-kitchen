@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const MyOrders = () => {
   const { cart, removeFromCart, updateQuantity, totalPrice } = useCart();
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FDFDFD]">
@@ -230,7 +231,10 @@ const MyOrders = () => {
               </div>
 
               {/* Proceed to Checkout Button */}
-              <button className="w-full bg-[#FF7A1B] text-white py-4 rounded-xl font-bold text-lg md:text-xl shadow-lg shadow-orange-100 hover:bg-orange-600 active:scale-[0.98] transition-all">
+              <button 
+                onClick={() => navigate('/payment')}
+                className="w-full bg-[#FF7A1B] text-white py-4 rounded-xl font-bold text-lg md:text-xl shadow-lg shadow-orange-100 hover:bg-orange-600 active:scale-[0.98] transition-all"
+              >
                 Proceed to Checkout
               </button>
             </div>
