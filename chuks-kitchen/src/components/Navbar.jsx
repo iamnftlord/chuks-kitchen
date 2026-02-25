@@ -17,45 +17,49 @@ const Navbar = ({ variant = 'auth' }) => {
   };
 
   const linkClass = (path) =>
-    `hover:text-[#FF7A1B] transition-colors ${
-      pathname === path ? 'text-[#FF7A1B]' : 'text-gray-700'
+    `transition-colors font-['Inter'] font-medium ${
+      pathname === path ? 'text-[#FF7A1B]' : 'text-gray-900 group-hover:text-[#FF7A1B]'
     }`;
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm px-6 py-4 flex items-center justify-between">
-      <Link to="/" className="text-2xl font-['Dancing_Script'] font-bold text-[#FF7A1B]">
+    <header className="bg-white sticky top-0 z-50 shadow-sm px-6 py-6 flex items-center justify-between">
+      <Link to="/" className="text-[32px] md:text-[40px] font-['Dancing_Script'] font-bold text-[#FF7A1B]">
         Chuks Kitchen
       </Link>
 
-      <nav className="hidden md:flex gap-40 text-sm font-semibold uppercase tracking-wide items-center">
+      <nav className="hidden lg:flex gap-20 text-[18px] items-center">
         <Link to="/" className={linkClass('/')}>Home</Link>
         <Link to="/explore" className={linkClass('/explore')}>Explore</Link>
-        <button className="text-gray-700 hover:text-[#FF7A1B] transition-colors cursor-pointer flex items-center gap-1.5">
-          My Order
-          {totalItems > 0 && (
-            <span className="bg-[#FF7A1B] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
-              {totalItems}
-            </span>
-          )}
-        </button>
-        <button className="text-gray-700 hover:text-[#FF7A1B] transition-colors cursor-pointer">Account</button>
+        <Link to="/orders" className={linkClass('/orders')}>
+          <div className="flex items-center gap-2 cursor-pointer group">
+            <span className={linkClass('/orders')}>My Orders</span>
+            {totalItems > 0 && (
+              <span className="bg-[#FF7A1B] text-white text-[12px] font-bold px-2 py-0.5 rounded-full min-w-[20px] text-center">
+                {totalItems}
+              </span>
+            )}
+          </div>
+        </Link>
+        <button className="text-gray-900 hover:text-[#FF7A1B] transition-colors cursor-pointer font-['Inter'] font-medium">Account</button>
       </nav>
 
-      {variant === 'auth' ? (
-        <button
-          onClick={handleLogout}
-          className="bg-[#FF7A1B] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-md hover:bg-orange-600 transition-all"
-        >
-          Log Out
-        </button>
-      ) : (
-        <Link
-          to="/login"
-          className="px-5 sm:px-8 py-2 bg-[#FF7A1B] text-white rounded-lg font-bold hover:bg-orange-600 transition-all text-xs sm:text-sm shadow-md"
-        >
-          Login
-        </Link>
-      )}
+      <div className="flex items-center gap-4">
+        {variant === 'auth' ? (
+          <button
+            onClick={handleLogout}
+            className="bg-[#FF7A1B] text-white px-10 py-3.5 rounded-xl font-bold text-lg shadow-lg hover:bg-orange-600 transition-all active:scale-[0.98]"
+          >
+            Login
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="bg-[#FF7A1B] text-white px-10 py-3.5 rounded-xl font-bold text-lg shadow-lg hover:bg-orange-600 transition-all active:scale-[0.98]"
+          >
+            Login
+          </Link>
+        )}
+      </div>
     </header>
   );
 };

@@ -13,55 +13,115 @@ import sp5 from '../assets/Variant4.jpg';
 import sp6 from '../assets/Variant5.jpg';
 
 export const categories = [
-  { id: 'jollof-delights',    title: 'Jollof Delights',    image: cat1 },
-  { id: 'swallow-soups',      title: 'Swallow & Soups',    image: cat2 },
-  { id: 'grills-bbq',         title: 'Grills & BBQ',       image: cat3 },
-  { id: 'sweet-treats',       title: 'Sweet Treats',       image: cat4 },
-  { id: 'local-drinks',       title: 'Local Drinks',       image: cat5 },
-  { id: 'breakfast-special',  title: 'Breakfast Special',  image: cat6 },
+  { id: 'popular',            title: 'Popular' },
+  { id: 'jollof-entrees',    title: 'Jollof Rice & Entrees' },
+  { id: 'swallow-soups',      title: 'Swallow & Soups' },
+  { id: 'grills-sides',       title: 'Grills & sides' },
+  { id: 'beverages',          title: 'Beverages' },
+  { id: 'desserts',           title: 'Desserts' },
 ];
 
 export const chefSpecials = [
+  // Popular
   {
-    id: 'tilapia-pepper-soup',
-    name: 'Spicy Tilapia Pepper Soup',
-    description: 'Authentic spicy tilapia fish soup made with traditional herbs.',
-    price: '₦5,500',
-    image: sp1,
-  },
-  {
-    id: 'jollof-fried-chicken',
-    name: 'Jollof Rice & Fried Chicken',
-    description: 'Signature smoky jollof rice paired with crispy fried chicken.',
-    price: '₦4,800',
+    id: 'p-1',
+    name: 'Jollof Rice with Fried Chicken',
+    description: 'Our signature jollof rice, served with crispy fried chicken and plantain.',
+    price: '₦2,800',
     image: sp2,
+    category: 'popular'
   },
   {
-    id: 'egusi-pounded-yam',
-    name: 'Egusi Soup & Pounded Yam',
-    description: 'Rich Egusi soup served with fluffy pounded yam (Swallow).',
-    price: '₦6,200',
+    id: 'p-2',
+    name: 'Eba & Egusi Soup (Goat Meat)',
+    description: 'Hearty Egusi soup with tender goat meat, served with soft Eba.',
+    price: '₦3,500',
     image: sp3,
+    category: 'popular'
   },
   {
-    id: 'jollof-gizzard',
-    name: 'Jollof Rice & Gizzard',
-    description: 'Party style jollof rice served with peppered gizzards.',
+    id: 'p-3',
+    name: 'Pounded Yam & Edikaikong',
+    description: 'Traditional pounded yam with rich, leafy Edikaikong soup.',
+    price: '₦3,500',
+    image: cat2,
+    category: 'popular'
+  },
+  {
+    id: 'p-4',
+    name: 'Peppered Snail',
+    description: 'Spicy and savory peppered snail, perfect as a starter.',
+    price: '₦3,500',
+    image: sp1,
+    category: 'popular'
+  },
+  {
+    id: 'p-5',
+    name: 'Grilled Tilapia Fish',
+    description: 'Whole grilled tilapia seasoned with our special spices.',
     price: '₦4,500',
-    image: sp4,
-  },
-  {
-    id: 'suya-skewers',
-    name: 'Suya Skewers Platter',
-    description: 'Flame-grilled suya skewers seasoned with traditional yaji spice mix.',
-    price: '₦3,800',
     image: sp5,
+    category: 'popular'
   },
   {
-    id: 'ofe-onugbu',
-    name: 'Ofe Onugbu & Fufu',
-    description: 'Bitterleaf soup slow-cooked with assorted meat, served with fufu.',
-    price: '₦5,900',
+    id: 'p-6',
+    name: 'Jollof Rice with Fried Chicken',
+    description: 'Our signature jollof rice, served with crispy fried chicken and plantain.',
+    price: '₦2,800',
+    image: sp2,
+    category: 'popular'
+  },
+
+  // Jollof Rice & Entrees
+  {
+    id: 'j-1',
+    name: 'Jollof Rice & Smoked Fish',
+    description: 'Flavorful jollof rice served with perfectly smoked fish.',
+    price: '₦3,500',
+    image: sp4,
+    category: 'jollof-entrees'
+  },
+  {
+    id: 'j-2',
+    name: 'Party Jollof Rice (Veg)',
+    description: 'Vegetarian party jollof, full of rich flavors.',
+    price: '₦3,000',
+    image: sp2,
+    category: 'jollof-entrees'
+  },
+  {
+    id: 'j-3',
+    name: 'Party Jollof Rice (Veg)',
+    description: 'Vegetarian party jollof, full of rich flavors.',
+    price: '₦3,000',
+    image: sp2,
+    category: 'jollof-entrees'
+  },
+
+  // Swallow & Soups
+  {
+    id: 's-1',
+    name: 'Banga Soup & Starch',
+    description: 'Classic meals served with banga (palm) and starch (puff-puff) soup.',
+    price: '₦3,500',
+    image: sp3,
+    category: 'swallow-soups'
+  },
+  {
+    id: 's-2',
+    name: 'Fufu & Okra Soup (Fish)',
+    description: 'Light fufu served with fresh okra soup and tilapia fish.',
+    price: '₦3,500',
     image: sp6,
+    category: 'swallow-soups'
+  },
+  {
+    id: 's-3',
+    name: 'Fufu & Okra Soup (Fish)',
+    description: 'Light fufu served with fresh okra soup and tilapia fish.',
+    price: '₦3,500',
+    image: sp6,
+    category: 'swallow-soups'
   },
 ];
+
