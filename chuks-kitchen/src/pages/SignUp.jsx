@@ -29,7 +29,7 @@ const SignUp = () => {
       return;
     }
     console.log('Signing up with:', formData);
-    navigate('/explore');
+    navigate('/home');
   };
 
   return (

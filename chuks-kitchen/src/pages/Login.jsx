@@ -36,7 +36,7 @@ const Login = () => {
 
     localStorage.setItem('isLoggedIn', 'true');
 
-    navigate('/explore');
+    navigate('/home');
   };
 
   return (

@@ -22,41 +22,41 @@ const Navbar = ({ variant = 'auth' }) => {
     }`;
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm px-6 py-6 flex items-center justify-between">
-      <Link to="/" className="text-[32px] md:text-[40px] font-['Dancing_Script'] font-bold text-[#FF7A1B]">
+    <header className="bg-white sticky top-0 z-50 shadow-sm px-6 py-4 flex items-center justify-between">
+      <Link to="/" className="text-[28px] md:text-[32px] font-['Dancing_Script'] font-bold text-[#FF7A1B]">
         Chuks Kitchen
       </Link>
 
-      <nav className="hidden lg:flex gap-20 text-[18px] items-center">
-        <Link to="/" className={linkClass('/')}>Home</Link>
-        <Link to="/explore" className={linkClass('/explore')}>Explore</Link>
+      <nav className="hidden lg:flex gap-12 text-[15px] items-center absolute left-1/2 -translate-x-1/2">
+        <Link to="/" className={linkClass('/')}>HOME</Link>
+        <Link to="/explore" className={linkClass('/explore')}>EXPLORE</Link>
         <Link to="/orders" className={linkClass('/orders')}>
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <span className={linkClass('/orders')}>My Orders</span>
+          <div className="flex items-center gap-2 cursor-pointer group uppercase">
+            <span className={linkClass('/orders')}>MY ORDERS</span>
             {totalItems > 0 && (
-              <span className="bg-[#FF7A1B] text-white text-[12px] font-bold px-2 py-0.5 rounded-full min-w-[20px] text-center">
+              <span className="bg-[#FF7A1B] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
                 {totalItems}
               </span>
             )}
           </div>
         </Link>
-        <button className="text-gray-900 hover:text-[#FF7A1B] transition-colors cursor-pointer font-['Inter'] font-medium">Account</button>
+        <button className="text-gray-900 hover:text-[#FF7A1B] transition-colors cursor-pointer font-['Inter'] font-semibold uppercase tracking-wider">ACCOUNT</button>
       </nav>
 
       <div className="flex items-center gap-4">
         {variant === 'auth' ? (
           <button
             onClick={handleLogout}
-            className="bg-[#FF7A1B] text-white px-10 py-3.5 rounded-xl font-bold text-lg shadow-lg hover:bg-orange-600 transition-all active:scale-[0.98]"
+            className="bg-[#FF7A1B] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-md hover:bg-orange-600 transition-all active:scale-[0.98]"
           >
-            Login
+            Log out
           </button>
         ) : (
           <Link
             to="/login"
-            className="bg-[#FF7A1B] text-white px-10 py-3.5 rounded-xl font-bold text-lg shadow-lg hover:bg-orange-600 transition-all active:scale-[0.98]"
+            className="bg-[#FF7A1B] text-white px-8 py-2.5 rounded-lg font-bold text-sm shadow-md hover:bg-orange-600 transition-all active:scale-[0.98]"
           >
-            Login
+            Log in
           </Link>
         )}
       </div>
