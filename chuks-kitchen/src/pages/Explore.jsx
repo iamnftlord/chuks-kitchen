@@ -55,35 +55,37 @@ const Explore = () => {
 
       {/* Enhanced Hero Section */}
       <section
-        className="relative h-[480px] bg-cover bg-center flex items-center px-6 sm:px-12 md:px-24"
+        className="relative h-[350px] md:h-[480px] bg-cover bg-center flex items-center px-6 sm:px-12 md:px-24"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-white max-w-2xl">
-          <h1 className="text-5xl md:text-6xl font-['Outfit'] font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-['Outfit'] font-bold mb-3 md:mb-4">
             Chuks Kitchen
           </h1>
-          <p className="text-xl md:text-2xl font-medium text-gray-200">
+          <p className="text-lg md:text-xl lg:text-2xl font-medium text-gray-200">
             Chuks Kitchen Nigerian Home Cooking 4.8 (1.2k)
           </p>
         </div>
       </section>
 
       <div className="px-6 sm:px-12 md:px-24 pt-16 pb-20 bg-gray-50/50">
-        <div className="max-w-4xl mx-auto">
-          {/* Styled Vertical Category Navigation Card */}
-          <div className="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden mb-16">
-            <div className="p-10">
-              <h3 className="text-xl font-bold text-[#1F2937] mb-6 font-['Outfit'] px-6">Menu Categories</h3>
-              <div className="flex flex-col">
+        <div className="max-w-5xl mx-auto">
+          {/* Responsive Category Navigation */}
+          <div className="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden mb-12 md:mb-16">
+            <div className="p-6 md:p-10">
+              <h3 className="text-lg md:text-xl font-bold text-[#1F2937] mb-6 font-['Outfit'] px-4 md:px-6">Menu Categories</h3>
+              
+              {/* Desktop: Vertical List | Mobile: Horizontal Scroll */}
+              <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible no-scrollbar pb-2 md:pb-0 gap-2 md:gap-0">
                 {categories.map((cat) => (
                   <button
                     key={cat.id}
                     onClick={() => scrollToCategory(cat.id)}
-                    className={`w-full text-left px-12 py-4 transition-all duration-300 border-l-4 ${
+                    className={`whitespace-nowrap md:whitespace-normal px-6 md:px-12 py-3 md:py-4 transition-all duration-300 rounded-full md:rounded-none border-2 md:border-0 md:border-l-4 ${
                       activeCategory === cat.id
                         ? 'bg-[#FFF3E5] text-[#FF7A1B] border-[#FF7A1B] font-bold'
-                        : 'text-gray-700 border-transparent hover:bg-gray-50 hover:border-l-gray-200'
+                        : 'text-gray-700 border-gray-100 md:border-transparent hover:bg-gray-50'
                     }`}
                   >
                     {cat.title}
@@ -102,8 +104,8 @@ const Explore = () => {
               if (categoryItems.length === 0) return null;
 
               return (
-                <section key={category.id} id={category.id} className="mb-20 scroll-mt-28">
-                  <h2 className="text-3xl font-bold text-[#1F2937] mb-10 font-['Outfit']">
+                <section key={category.id} id={category.id} className="mb-16 md:mb-20 scroll-mt-28">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#1F2937] mb-8 md:mb-10 font-['Outfit']">
                     {category.title}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">

@@ -79,7 +79,7 @@ const Payment = () => {
             </p>
 
             {/* Order Confirmation Box */}
-            <div className="bg-[#FFFFFF] rounded-2xl p-4 md:p-1 w-full max-w-sm mb-8">
+            <div className="bg-[#FFFFFF] rounded-2xl p-4 md:p-1 w-full max-w-sm mb-4 md:mb-8">
               <div className="p-4 md:p-8">
                  <div className="flex justify-center mb-10">
                     <div className="w-4 h-4 bg-[#D1FAE5] rounded-full"></div>
@@ -100,10 +100,10 @@ const Payment = () => {
               </button>
 
               <div className="space-y-4 pt-4">
-                <button className="text-gray-400 font-bold text-lg md:text-xl block w-full hover:text-gray-600 transition-colors">
+                <button className="text-gray-400 font-bold text-base md:text-xl block w-full hover:text-gray-600 transition-colors">
                   Generate Receipt
                 </button>
-                <button className="text-[#00B4D8] font-bold text-lg md:text-xl block w-full hover:underline transition-all">
+                <button className="text-[#00B4D8] font-bold text-base md:text-xl block w-full hover:underline transition-all">
                   Need help with your order?
                 </button>
               </div>
@@ -153,9 +153,9 @@ const Payment = () => {
     <div className="flex flex-col min-h-screen bg-[#F8F9FA]">
       <Navbar variant="auth" />
 
-      <main className="flex-1 flex items-center justify-center px-4 py-12 md:py-20">
-        <div className="w-full max-w-[650px] bg-white rounded-[24px] border border-gray-100 p-8 md:p-14 shadow-sm">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#000000] mb-8 font-['Outfit'] tracking-tight">
+      <main className="flex-1 flex items-center justify-center px-4 py-8 md:py-20">
+        <div className="w-full max-w-[650px] bg-white rounded-[24px] border border-gray-100 p-6 md:p-14 shadow-sm">
+          <h1 className="text-2xl md:text-4xl font-bold text-[#000000] mb-6 md:mb-8 font-['Outfit'] tracking-tight">
             Payment
           </h1>
 
@@ -176,7 +176,7 @@ const Payment = () => {
                     />
                     <div className="absolute w-2.5 h-2.5 bg-[#26B36E] rounded-full opacity-0 peer-checked:opacity-100 transition-all"></div>
                   </div>
-                  <span className={`text-lg font-bold font-['Inter'] ${paymentMethod === 'card' ? 'text-black' : 'text-gray-400'}`}>Card</span>
+                  <span className={`text-base md:text-lg font-bold font-['Inter'] ${paymentMethod === 'card' ? 'text-black' : 'text-gray-400'}`}>Card</span>
                 </label>
 
                 <label className="flex items-center gap-3 cursor-pointer group">
@@ -191,7 +191,7 @@ const Payment = () => {
                     />
                     <div className="absolute w-2.5 h-2.5 bg-[#26B36E] rounded-full opacity-0 peer-checked:opacity-100 transition-all"></div>
                   </div>
-                  <span className={`text-lg font-bold font-['Inter'] ${paymentMethod === 'bank' ? 'text-black' : 'text-gray-400'}`}>Bank</span>
+                  <span className={`text-base md:text-lg font-bold font-['Inter'] ${paymentMethod === 'bank' ? 'text-black' : 'text-gray-400'}`}>Bank</span>
                 </label>
 
                 <label className="flex items-center gap-3 cursor-pointer group">
@@ -206,7 +206,7 @@ const Payment = () => {
                     />
                     <div className="absolute w-2.5 h-2.5 bg-[#26B36E] rounded-full opacity-0 peer-checked:opacity-100 transition-all"></div>
                   </div>
-                  <span className={`text-lg font-bold font-['Inter'] ${paymentMethod === 'transfer' ? 'text-black' : 'text-gray-400'}`}>Transfer</span>
+                  <span className={`text-base md:text-lg font-bold font-['Inter'] ${paymentMethod === 'transfer' ? 'text-black' : 'text-gray-400'}`}>Transfer</span>
                 </label>
               </div>
             </div>
@@ -220,7 +220,7 @@ const Payment = () => {
                   value={cardNumber}
                   onChange={handleCardNumberChange}
                   placeholder="1234 5678 9101 1121"
-                  className={`w-full p-4 border rounded-lg focus:outline-none focus:border-[#FF7A1B] text-gray-500 font-['Inter'] text-lg ${error ? 'border-red-500' : 'border-gray-200'}`}
+                  className={`w-full p-3 md:p-4 border rounded-lg focus:outline-none focus:border-[#FF7A1B] text-gray-500 font-['Inter'] text-base md:text-lg ${error ? 'border-red-500' : 'border-gray-200'}`}
                 />
                 {error && <p className="text-red-500 text-sm font-medium mt-1 font-['Inter']">{error}</p>}
               </div>
@@ -243,7 +243,7 @@ const Payment = () => {
                     value={cvv}
                     onChange={(e) => setCvv(e.target.value)}
                     placeholder="123"
-                    className="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-[#FF7A1B] text-gray-500 font-['Inter'] text-lg"
+                    className="w-full p-3 md:p-4 border border-gray-200 rounded-lg focus:outline-none focus:border-[#FF7A1B] text-gray-500 font-['Inter'] text-base md:text-lg"
                   />
                 </div>
               </div>

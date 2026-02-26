@@ -59,14 +59,14 @@ const ProductModal = ({ item, onClose }) => {
       />
       
       {/* Modal Container */}
-      <div className="relative bg-white w-full max-w-6xl rounded-[32px] overflow-hidden flex flex-col md:flex-row shadow-2xl animate-in fade-in zoom-in duration-300 max-h-[90vh]">
+      <div className="relative bg-white w-full max-w-6xl rounded-t-[32px] md:rounded-[32px] overflow-hidden flex flex-col md:flex-row shadow-2xl animate-in slide-in-from-bottom md:zoom-in duration-300 max-h-[92vh] md:max-h-[90vh]">
         
         {/* Close Button - positioned at top right of the scrollable content area */}
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 bg-black text-white w-8 h-8 rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg"
+          className="absolute top-4 md:top-6 right-4 md:right-6 z-20 bg-black/50 md:bg-black text-white w-10 h-10 md:w-8 md:h-8 rounded-full md:rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg"
         >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="20" height="20" md:width="16" md:height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
@@ -82,20 +82,20 @@ const ProductModal = ({ item, onClose }) => {
         </div>
 
         {/* Right Side: Options */}
-        <div className="w-full md:w-[55%] lg:w-[52%] p-8 md:p-14 overflow-y-auto custom-scrollbar">
+        <div className="w-full md:w-[55%] lg:w-[52%] p-6 md:p-14 overflow-y-auto no-scrollbar md:custom-scrollbar">
           <div className="max-w-2xl">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1F2937] mb-3 font-['Outfit'] tracking-tight">
+            <h2 className="text-2xl lg:text-4xl font-bold text-[#1F2937] mb-2 md:mb-3 font-['Outfit'] tracking-tight">
               {item.name}
             </h2>
-            <p className="text-[#FF7A1B] text-2xl lg:text-3xl font-bold mb-6">
+            <p className="text-[#FF7A1B] text-xl lg:text-3xl font-bold mb-4 md:mb-6">
               {item.price}
             </p>
-            <p className="text-gray-600 text-sm lg:text-base leading-relaxed mb-8">
+            <p className="text-gray-600 text-xs sm:text-sm lg:text-base leading-relaxed mb-6 md:mb-8">
               {item.description || "Our signature jollof rice, cooked to perfection with aromatic spices, served with juicy, golden-fried chicken. A classic Nigerian comfort food, rich in flavor and satisfying. Perfect for a quick lunch or a hearty dinner."}
             </p>
 
             {/* Badges */}
-            <div className="flex items-center gap-6 mb-10 text-[13px] font-semibold text-gray-500 font-['Inter']">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mb-8 md:10 text-[12px] md:text-[13px] font-semibold text-gray-500 font-['Inter']">
               <div className="flex items-center gap-2.5 whitespace-nowrap">
                 <BadgeIcon />
                 Mildly spicy
@@ -113,26 +113,26 @@ const ProductModal = ({ item, onClose }) => {
             <div className="space-y-10">
               {/* Protein Selection */}
               <div>
-                <h3 className="text-2xl font-bold text-[#1F2937] mb-5 font-['Outfit']">Choose Your Protein</h3>
-                <div className="space-y-3.5">
+                <h3 className="text-xl md:text-2xl font-bold text-[#1F2937] mb-4 md:mb-5 font-['Outfit']">Choose Your Protein</h3>
+                <div className="space-y-3">
                   {proteinOptions.map((opt) => (
                     <label 
                       key={opt.name} 
-                      className={`flex items-center justify-between p-5 border-2 rounded-2xl cursor-pointer transition-all duration-300 ${
+                      className={`flex items-center justify-between p-4 md:p-5 border-2 rounded-2xl cursor-pointer transition-all duration-300 ${
                         selectedProtein === opt.name 
                           ? 'border-[#FF7A1B] bg-orange-50/20' 
                           : 'border-gray-100 hover:border-gray-200'
                       }`}
                     >
-                      <div className="flex items-center gap-4">
-                        <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all ${
+                      <div className="flex items-center gap-3 md:gap-4">
+                        <div className={`w-6 h-6 md:w-7 md:h-7 rounded-full border-2 flex items-center justify-center transition-all ${
                           selectedProtein === opt.name ? 'border-[#FF7A1B]' : 'border-gray-300'
                         }`}>
-                          {selectedProtein === opt.name && <div className="w-4 h-4 bg-[#FF7A1B] rounded-full" />}
+                          {selectedProtein === opt.name && <div className="w-3.5 h-3.5 md:w-4 md:h-4 bg-[#FF7A1B] rounded-full" />}
                         </div>
-                        <span className="font-bold text-lg text-[#1F2937]">{opt.name}</span>
+                        <span className="font-bold text-base md:text-lg text-[#1F2937]">{opt.name}</span>
                       </div>
-                      <span className="font-bold text-gray-800">{opt.suffix}</span>
+                      <span className="font-bold text-gray-800 text-sm md:text-base">{opt.suffix}</span>
                       <input 
                         type="radio" 
                         className="hidden" 

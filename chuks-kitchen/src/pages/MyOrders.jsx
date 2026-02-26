@@ -11,7 +11,7 @@ const MyOrders = () => {
     <div className="flex flex-col min-h-screen bg-[#FDFDFD]">
       <Navbar variant="auth" />
 
-      <main className="flex-1 px-4 sm:px-12 md:px-24 py-8 md:py-12">
+      <main className="flex-1 px-4 sm:px-12 md:px-24 py-6 md:py-12">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-xl md:text-2xl font-bold text-[#000000] mb-6 font-['Outfit'] tracking-tight">
             Your Cart
@@ -20,19 +20,31 @@ const MyOrders = () => {
           <div className="space-y-3">
             {cart.length > 0 ? (
               cart.map((item) => (
-                <div key={item.id} className="bg-white rounded-lg border border-gray-100 p-3 md:p-5 flex flex-row items-center gap-4 md:gap-8 transition-all duration-300">
-                  {/* Item Image */}
-                  <div className="w-20 md:w-36 h-20 md:h-28 shrink-0 rounded-lg overflow-hidden shadow-sm border border-gray-50">
-                    <img 
-                      src={item.image} 
-                      alt={item.name} 
-                      className="w-full h-full object-cover"
-                    />
+                <div key={item.id} className="bg-white rounded-lg border border-gray-100 p-3 md:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-4 md:gap-8 transition-all duration-300">
+                  <div className="flex items-center w-full sm:w-auto gap-4">
+                    {/* Item Image */}
+                    <div className="w-20 md:w-36 h-20 md:h-28 shrink-0 rounded-lg overflow-hidden shadow-sm border border-gray-50 uppercase">
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Item Details (Mobile/Table) */}
+                    <div className="flex-1 min-w-0 sm:hidden">
+                      <h3 className="text-base font-bold text-[#000000] mb-0.5 font-['Outfit'] truncate leading-tight uppercase">
+                        {item.name}
+                      </h3>
+                      <p className="text-gray-400 text-xs font-medium tracking-tight font-['Inter']">
+                        {item.price}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Item Details */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base md:text-2xl font-bold text-[#000000] mb-0.5 md:mb-1.5 font-['Outfit'] truncate leading-tight">
+                  {/* Item Details (Desktop) */}
+                  <div className="hidden sm:block flex-1 min-w-0">
+                    <h3 className="text-lg md:text-2xl font-bold text-[#000000] mb-0.5 md:mb-1.5 font-['Outfit'] truncate leading-tight uppercase">
                       {item.name}
                     </h3>
                     <p className="text-gray-400 text-xs md:text-lg font-medium tracking-tight font-['Inter']">
@@ -45,36 +57,36 @@ const MyOrders = () => {
                   </div>
 
                   {/* Quantity Controls, Price & Remove Button */}
-                  <div className="flex items-center gap-4 md:gap-14">
-                    {/* Quantity Section */}
+                  <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-4 md:gap-14">
+                    {/* Quality Section */}
                     <div className="flex items-center gap-3 md:gap-8">
                       <button 
+                        onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                        className="w-8 h-8 md:w-8 md:h-8 rounded md:rounded-md bg-[#DEE2E6] flex items-center justify-center text-gray-500 hover:bg-gray-300 transition-colors"
+                      >
+                        <svg width="12" height="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                      </button>
+                      
+                      <span className="text-xl md:text-4xl font-bold text-[#000000] min-w-[1rem] md:min-w-[1.5rem] text-center tabular-nums font-['Outfit']">
+                        {item.quantity}
+                      </span>
+
+                      <button 
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="w-6 h-6 md:w-8 md:h-8 rounded md:rounded-md bg-[#DEE2E6] flex items-center justify-center text-gray-500 hover:bg-gray-300 transition-colors"
+                        className="w-8 h-8 md:w-8 md:h-8 rounded md:rounded-md bg-[#DEE2E6] flex items-center justify-center text-gray-500 hover:bg-gray-300 transition-colors"
                       >
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round">
                           <line x1="12" y1="5" x2="12" y2="19" />
                           <line x1="5" y1="12" x2="19" y2="12" />
                         </svg>
                       </button>
-                      
-                      <span className="text-lg md:text-4xl font-bold text-[#000000] min-w-[1rem] md:min-w-[1.5rem] text-center tabular-nums font-['Outfit']">
-                        {item.quantity}
-                      </span>
-
-                      <button 
-                        onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
-                        className="w-6 h-6 md:w-8 md:h-8 rounded md:rounded-md bg-[#DEE2E6] flex items-center justify-center text-gray-500 hover:bg-gray-300 transition-colors"
-                      >
-                        <svg width="12" height="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
-                      </button>
                     </div>
 
                     {/* Price Section */}
-                    <div className="min-w-[70px] md:min-w-[140px] text-right">
-                      <span className="text-sm md:text-3xl font-bold text-[#FF7A1B] font-['Outfit']">
+                    <div className="sm:min-w-[70px] md:min-w-[140px] text-right">
+                      <span className="text-xl md:text-3xl font-bold text-[#FF7A1B] font-['Outfit']">
                         {item.price}
                       </span>
                     </div>
@@ -82,9 +94,9 @@ const MyOrders = () => {
                     {/* Remove Icon */}
                     <button 
                       onClick={() => removeFromCart(item.id)}
-                      className="bg-[#FF8A3D] text-white w-5 h-5 md:w-7 md:h-7 rounded flex items-center justify-center hover:bg-orange-600 transition-all shadow-sm active:scale-90"
+                      className="bg-[#FF8A3D] text-white w-7 h-7 md:w-7 md:h-7 rounded flex items-center justify-center hover:bg-orange-600 transition-all shadow-sm active:scale-90"
                     >
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18" />
                         <line x1="6" y1="6" x2="18" y2="18" />
                       </svg>

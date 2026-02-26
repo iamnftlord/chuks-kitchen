@@ -37,16 +37,16 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-white max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-[54px] font-['Outfit'] font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-['Outfit'] font-bold mb-4 md:mb-6 leading-tight">
             The Heart of Nigerian Home Cooking
           </h1>
-          <p className="text-lg md:text-xl font-medium mb-10 text-gray-200">
+          <p className="text-base sm:text-lg md:text-xl font-medium mb-8 md:10 text-gray-200 px-4">
             Handcrafted with passion, delivered with care.
           </p>
           
           <button
             onClick={() => document.getElementById('specials').scrollIntoView({ behavior: 'smooth' })}
-            className="inline-block bg-[#FF7A1B] text-white px-10 py-3 rounded-lg font-bold text-base hover:bg-orange-600 transition-all active:scale-95 mb-12 shadow-md shadow-orange-500/20"
+            className="inline-block bg-[#FF7A1B] text-white px-8 md:px-10 py-3 rounded-lg font-bold text-sm md:text-base hover:bg-orange-600 transition-all active:scale-95 mb-10 md:mb-12 shadow-md shadow-orange-500/20"
           >
             Discover What's New
           </button>
@@ -73,8 +73,8 @@ const Home = () => {
       </section>
 
       {/* Popular Categories */}
-      <section className="py-24 px-6 sm:px-12 md:px-24 max-w-7xl mx-auto w-full">
-        <h2 className="text-[32px] font-bold text-center text-[#1F2937] mb-12">Popular Categories</h2>
+      <section className="py-16 md:py-24 px-6 sm:px-12 md:px-24 max-w-7xl mx-auto w-full">
+        <h2 className="text-2xl md:text-[32px] font-bold text-center text-[#1F2937] mb-10 md:mb-12">Popular Categories</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
           {filteredCategories.map((cat) => (
             <Link
@@ -140,10 +140,10 @@ const Home = () => {
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-3xl">
-          <h2 className="text-[42px] leading-tight font-['Outfit'] font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-[42px] leading-tight font-['Outfit'] font-bold mb-4 md:mb-6">
             Introducing Our New Menu Additions!
           </h2>
-          <p className="text-[18px] font-medium mb-10 text-gray-200 leading-relaxed">
+          <p className="text-base md:text-[18px] font-medium mb-8 md:10 text-gray-200 leading-relaxed">
             Explore exciting new dishes, crafted with the freshest ingredients and authentic Nigerian flavor. Limited time offer!
           </p>
           <button

@@ -53,7 +53,7 @@ const SignUp = () => {
 
         {/* Mobile/Tablet Header Image Overlay */}
         <div 
-          className="hidden md:flex lg:hidden relative w-full h-80 md:h-[400px] bg-cover bg-center items-center justify-center text-center px-6"
+          className="md:flex lg:hidden relative w-full h-64 md:h-[400px] bg-cover bg-center items-center justify-center text-center px-6"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-[#FF7A1B]/80"></div>
@@ -66,12 +66,12 @@ const SignUp = () => {
         </div>
 
         {/* Right Side - Form */}
-        <div className="w-full lg:w-1/2 flex flex-col bg-[#F8F9FA] px-6 py-12 sm:px-12 md:px-24 lg:px-16 xl:px-32 justify-center items-center">
+        <div className="w-full lg:w-1/2 flex flex-col bg-[#F8F9FA] px-6 py-10 sm:px-12 md:px-24 lg:px-16 xl:px-32 justify-center items-center">
           <div className="max-w-md w-full">
             {/* Logo and Heading */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-8 md:mb-10">
               <h2 className="text-3xl font-['Dancing_Script'] text-[#FF7A1B] mb-2 font-medium">Chuks Kitchen</h2>
-              <h3 className="text-2xl font-bold text-[#1F2937]">Create Your Account</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-[#1F2937]">Create Your Account</h3>
             </div>
 
             <form onSubmit={handleSignUp} className="space-y-5">

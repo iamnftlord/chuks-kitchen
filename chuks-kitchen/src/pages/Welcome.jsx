@@ -17,7 +17,7 @@ const Welcome = () => {
 
       {/* Mobile/Tablet Hero Image (Top) */}
       <div 
-        className="lg:hidden w-full h-64 md:h-[400px] bg-cover bg-center"
+        className="lg:hidden w-full h-56 md:h-[400px] bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="w-full h-full bg-black/10"></div>
@@ -37,10 +37,10 @@ const Welcome = () => {
 
         {/* Hero Text Content */}
         <div className="grow flex flex-col justify-center max-w-lg mx-auto lg:mx-0">
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-['Outfit'] font-extrabold text-[#1F2937] mb-6 leading-tight text-center lg:text-left">
+          <h2 className="text-2xl md:text-4xl lg:text-[42px] font-['Outfit'] font-extrabold text-[#1F2937] mb-5 md:mb-6 leading-tight text-center lg:text-left">
             Your Authentic Taste of Nigeria
           </h2>
-          <p className="text-base text-gray-600 mb-10 leading-relaxed text-center lg:text-left">
+          <p className="text-sm md:text-base text-gray-600 mb-8 md:10 leading-relaxed text-center lg:text-left">
             Experience homemade flavors delivered fresh to your desk or home. 
             We bring the rich culinary heritage of Nigeria right to your doorstep.
           </p>
