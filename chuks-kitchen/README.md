@@ -12,6 +12,14 @@ Chuks Kitchen is a modern, responsive food ordering web application designed to 
 - **Order Summary**: Detailed breakdown of delivery details and pricing.
 - **Simulated Payment**: Functional payment interface with validation (Mastercard format).
 
+## 📚 Documentation
+
+For more detailed technical information, please refer to the following guides:
+
+- [**System Architecture**](docs/ARCHITECTURE.md): Deep dive into authentication, state management, and routing.
+- [**Component Library**](docs/COMPONENTS.md): Detailed documentation of UI components and pages.
+- [**Contribution Guide**](CONTRIBUTING.md): Standards and workflow for developers.
+
 ## 🚀 Technologies Used
 
 - **Frontend**: [React 19](https://react.dev/)
